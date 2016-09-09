@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="丁锋 FengDing">
+    <title>智游教育问答</title>
+</head>
+
+<body>
+    <h1>智游教育问答</h1>
+    <p>
+        {{if account}}
+        {{account}}
+        <a href="/user/signout">退出</a> {{else}}
+        <a href="/user/signin">登录</a>
+        <a href="/user/register">注册</a> {{/if}}
+    </p>
+    <div>
+        <a href="/ask">添加问题</a>
+    </div>
+    {{each questions as q i}}
+    <h3>{{q.text}}</h3>
+    <p>{{q.keyword}},{{q.createUser.account}},{{q.createTime | formatDateTime}},{{q.ip}}</p>
+    {{/each}}
+    <script src="/libs/jquery.js"></script>    
+</body>
+
+</html>

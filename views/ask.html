@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="丁锋 FengDing">
+    <title>添加问题 - 智游教育问答</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div>
+        <ul>
+            <!--keywords是一个数组 keyword是数组元素 i是数组索引-->
+            {{each keywords as keyword i}}
+            <li>{{keyword.text}}</li>
+            <!--<li>{{keyword.createTime}}</li>
+            <li>{{keyword.ip}}</li>            -->
+            {{/each}}
+        </ul>
+        <a href="javascript:addKeyword()">添加关键词</a>
+        <form action="#">
+            <textarea name="text" id="" cols="60" rows="10"></textarea>
+            <input type="submit" value="提交问题">
+        </form>
+    </div>
+<script src="/libs/jquery.js"></script>
+<script src="/js/ask.js"></script>
+</body>
+
+</html>
